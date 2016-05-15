@@ -14,7 +14,17 @@ io.on('connection',function(socket){
 
 	socket.on('hoops',function(data){
 		console.log('Hoops',data);
-		
+
+	});
+
+	socket.on('send message',function(data){
+
+		var message = data;
+		console.log(message);
+
+		socket.emit('new message',{'message':message});
+
+
 	});
 
 });

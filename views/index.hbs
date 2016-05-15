@@ -1,2 +1,16 @@
-<h1>{{title}}</h1>
+<h1>{{title}} + Socket.io</h1>
 <p>Welcome to {{title}}</p>
+
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="list-group">
+      <p class="list-group-item" v-for="chat in chats" v-html="chat.message">
+      </p>
+    </div>
+    <textarea name="name" class="form-control" rows="2" cols="40" v-model="message"></textarea>
+    <div class="">
+      <button type="button" class="btn" name="button" @click="sendMessage">Send</button>
+    </div>
+  </div>
+</div>
