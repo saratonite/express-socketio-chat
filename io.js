@@ -22,7 +22,8 @@ io.on('connection',function(socket){
 		var message = data;
 		console.log(message);
 
-		socket.emit('new message',{'message':message});
+		io.emit('new message',{'message':message});
+
 
 
 	});
