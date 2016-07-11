@@ -3,14 +3,22 @@
 
 
 <div class="row">
-  <div class="col-md-8">
-    <div class="list-group">
-      <p class="list-group-item" v-for="chat in chats" v-html="chat.message">
-      </p>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Live Chat
+      </div>
+      <div class="panel-body">
+        <div class="list-group">
+          <p class="list-group-item" v-for="chat in chats" v-html="chat.message">
+          </p>
+        </div>
+        <textarea name="name" class="form-control" rows="2" cols="40" v-model="message"></textarea>
+        <div class="">
+          <button type="button" class="btn" name="button" @click="sendMessage">Send</button>
+        </div>
+      </div>
     </div>
-    <textarea name="name" class="form-control" rows="2" cols="40" v-model="message"></textarea>
-    <div class="">
-      <button type="button" class="btn" name="button" @click="sendMessage">Send</button>
-    </div>
+
   </div>
 </div>

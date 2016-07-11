@@ -14,19 +14,18 @@
       var self = this;
       socket.on('new message',function(data){
 
-        console.log(data);
         self.chats.push(data);
 
-        console.log(self.chats);
 
       });
     },
     methods:{
       sendMessage:function(){
 
-
-        socket.emit('send message',this.message);
-        this.message = '';
+        if(this.message){
+          socket.emit('send message',this.message);
+          this.message = '';  
+        }
 
       },
       socketListeners:function(){
